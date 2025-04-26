@@ -6,19 +6,32 @@ import io.github.classgraph.*;
 
 import java.util.*;
 
+/**
+ * Scans packages for @Command and @CommandGroup annotations,
+ * and generates a list of CommandInfo entries.
+ */
 public class CommandScanner {
 
     private final String basePackage;
 
+    /**
+     * Creates a new CommandScanner.
+     *
+     * @param basePackage The root package to start scanning from.
+     */
     public CommandScanner(String basePackage) {
         this.basePackage = basePackage;
     }
 
     /**
-     * Scan for @Command and @CommandGroup, and return a list of CommandInfo.
+     * Scans for command classes and command group packages.
+     *
+     * @return A list of discovered CommandInfo objects.
      */
     public List<CommandInfo> scanCommands() {
-        Map<String,String> pkgToGroup = new HashMap<>();
+        Map<String, String> pkgToGroup = new HashMap<>();
+
+        // First, find all @CommandGroup annotations
         try (ScanResult pkgScan = new ClassGraph()
                 .enableAllInfo()
                 .acceptPackages(basePackage)
@@ -37,6 +50,8 @@ public class CommandScanner {
         }
 
         List<CommandInfo> results = new ArrayList<>();
+
+        // Then, find all @Command classes
         try (ScanResult cmdScan = new ClassGraph()
                 .enableAllInfo()
                 .acceptPackages(basePackage)
@@ -52,6 +67,8 @@ public class CommandScanner {
                 String pkg = cInfo.getPackageName();
                 String[] parts = pkg.split("\\.");
                 List<String> groups = new ArrayList<>();
+
+                // Match the package tree to build group names
                 for (int i = baseDepth + 1; i <= parts.length; i++) {
                     String sub = String.join(".", Arrays.copyOf(parts, i));
                     if (pkgToGroup.containsKey(sub)) {
@@ -77,4 +94,3 @@ public class CommandScanner {
         return results;
     }
 }
-

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.clawsoftsolutions.purrfectlib"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
     mavenCentral()
@@ -12,6 +12,10 @@ repositories {
 
 dependencies {
     implementation("io.github.classgraph:classgraph:4.8.179")
+}
+
+java {
+    withSourcesJar()
 }
 
 publishing {

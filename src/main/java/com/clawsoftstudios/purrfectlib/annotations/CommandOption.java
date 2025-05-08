@@ -1,6 +1,6 @@
-package com.github.clawsoftsolutions.purrfectlib.annotations;
+package com.clawsoftstudios.purrfectlib.annotations;
 
-import com.github.clawsoftsolutions.purrfectlib.enums.OptionType;
+import com.clawsoftstudios.purrfectlib.enums.OptionType;
 
 /**
  * Annotation to describe a single input option

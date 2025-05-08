@@ -1,7 +1,7 @@
-package com.github.clawsoftsolutions.purrfectlib.scanner;
+package com.clawsoftstudios.purrfectlib.scanner;
 
-import com.github.clawsoftsolutions.purrfectlib.annotations.Command;
-import com.github.clawsoftsolutions.purrfectlib.annotations.CommandGroup;
+import com.clawsoftstudios.purrfectlib.annotations.Command;
+import com.clawsoftstudios.purrfectlib.annotations.CommandGroup;
 import io.github.classgraph.*;
 
 import java.util.*;

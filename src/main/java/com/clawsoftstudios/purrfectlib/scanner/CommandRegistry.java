@@ -1,4 +1,4 @@
-package com.github.clawsoftsolutions.purrfectlib.scanner;
+package com.clawsoftstudios.purrfectlib.scanner;
 
 import java.util.*;
 

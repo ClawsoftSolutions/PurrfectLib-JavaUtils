@@ -1,6 +1,6 @@
-package com.github.clawsoftsolutions.purrfectlib.manager;
+package com.clawsoftstudios.purrfectlib.manager;
 
-import com.github.clawsoftsolutions.purrfectlib.enums.OptionType;
+import com.clawsoftstudios.purrfectlib.enums.OptionType;
 
 /**
  * Abstract base for command managers that maps OptionTypes to whatever representation they need.

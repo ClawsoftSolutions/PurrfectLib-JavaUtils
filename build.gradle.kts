@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.clawsoftsolutions.purrfectlib"
+group = "com.clawsoftstudios.purrfectlib"
 version = "0.0.5"
 
 repositories {
@@ -28,7 +28,7 @@ publishing {
     repositories {
         maven {
             name = "cloudsmith"
-            url = uri("https://maven.cloudsmith.io/clawsoftsolutions/purffectlib/maven/")
+            url = uri("https://maven.cloudsmith.io/clawsoftstudios/purffectlib/maven/")
             credentials {
                 username = (findProperty("cloudsmith.user") as String?)
                     ?: System.getenv("CLOUDSMITH_USER")

@@ -1,4 +1,4 @@
-package com.github.clawsoftsolutions.purrfectlib.enums;
+package com.clawsoftstudios.purrfectlib.enums;
 
 /**
  * Represents the different types of command options

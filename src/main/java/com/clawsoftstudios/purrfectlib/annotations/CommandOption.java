@@ -26,4 +26,12 @@ public @interface CommandOption {
      * @return Whether this option must be provided by the user.
      */
     boolean required() default false;
+
+    /**
+     * @return An array of possible choices for this option.
+     *         These choices are predefined values that users can select from.
+     *         Each choice is represented by a name (displayed to the user)
+     *         and a value (the actual value sent to the server).
+     */
+    OptionChoice[] choices() default {};
 }
